@@ -14,15 +14,15 @@ class BlastHit(object):
     """
     Parse ncbi blast tabular output, comments will be ignored.
 
-    blastp produces the following columns:
-    qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore
+    We ues the following blastx headers:
+    qseqid sseqid sgi evalue bitscore score length nident mismatch positive qstart qend sstart send qframe st    axids stitle
     """
 
     col_sep = "\t"
     query_id_col = 0
     subject_id_col = 1
-    evalue_col = 10
-    bitscore_col = 11
+    evalue_col = 3 
+    bitscore_col = 4
     
     def __init__(self, line=None):
         self.line = line
